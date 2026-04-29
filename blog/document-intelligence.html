@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A practical primer on NLP and document analytics — what it is, why processing documents is hard, and how to identify the right processes to automate.">
+  <title>What is Document Analytics? And How is it Relevant for My Business? – Marc Giombetti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/blog.css">
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">Marc Giombetti</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#focus">Focus</a></li>
+        <li><a href="../index.html#blog">Blog</a></li>
+        <li><a href="../CV-Marc-Giombetti.pdf" target="_blank" rel="noopener">CV</a></li>
+        <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="blog-post-page">
+    <div class="blog-post-container">
+
+      <a href="../index.html#blog" class="blog-back-link">← Back to all articles</a>
+
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&h=680&q=80" alt="Document processing and analytics" class="blog-post-hero-img" loading="eager">
+
+      <header class="blog-post-header">
+        <div class="blog-post-meta">
+          <span class="blog-date">May 20, 2019</span>
+          <span class="blog-category">Machine Learning</span>
+        </div>
+        <h1 class="blog-post-title">What is Document Analytics? And How is it Relevant for My Business?</h1>
+        <p class="blog-post-subtitle">A practical primer on NLP and document analytics — what it is, why processing documents is hard, and how to identify the right processes to automate.</p>
+        <div class="blog-post-author">
+          <img src="../assets/images/marc-1.jpg" alt="Marc Giombetti" class="blog-author-photo">
+          <div>
+            <span class="blog-author-name">Marc Giombetti &amp; Susanna Tron</span>
+            <span class="blog-author-title">AI Specialist</span>
+          </div>
+        </div>
+      </header>
+
+      <article class="blog-post-body">
+
+        <p class="blog-lead">In the last two weeks, a few colleagues from our team participated in the Swiss Re Tech Days in London and in Zurich to speak about Document Analytics to a large crowd of reinsurance leaders and analytics professionals. There was a keen interest in the topic and we received a lot of questions around automation, document analytics and NLP in general.</p>
+
+        <h2>What is Document Analytics?</h2>
+
+        <p>Document Analytics is a field of study which makes use of natural language processing (NLP) techniques in order to automate repetitive document processing tasks or to gain deeper understanding of the documents' content. Document Analytics is a key differentiator and enabler for industries where documents — some even still in paper form — are at the core of many business processes. This is the case of insurance and the financial industry in general.</p>
+
+        <h2>What Exactly is NLP?</h2>
+
+        <p>Natural Language Processing is a sub-field of AI enabling machines to analyze, understand and generate human language, which can be in either written or spoken form. Typical applications of NLP include text-to-speech applications (e.g. virtual assistants), sentiment analysis and real time speech translation, to name a few. As far as Document Analytics is concerned, mainly text mining is of interest. Text mining is a type of analytics that identifies key concepts or entities in large quantities of documents and transforms them into actionable insights by transforming them into structured data.</p>
+
+        <h2>Why is Processing Documents Difficult?</h2>
+
+        <p>Machines are very good at processing information stored in defined structures, such as database columns or standardized formats like XML or JSON. The challenges in processing documents are multi-fold: the machine needs to be able to deal with different formats, understand the document's structure, as well as to disambiguate the actual content in order make sense of it.</p>
+
+        <p>Words and phrases in a document have a given meaning and given relationships to other words and phrases, which heavily depend on the context in which they occur. Consider the following example:</p>
+
+        <ul>
+          <li>"I saw a jaguar in the zoo." → animal</li>
+          <li>"My friend crashed his brand-new Jaguar" → car</li>
+        </ul>
+
+        <p>In addition to semantic complexity, documents can vary in structure (e.g. tables in invoices accounting documents, or free text in e-mails) and come in different technical formats (docx, pdf, xps, etc.)</p>
+
+        <p>One approach used to address these challenges is rule-based NLP. This allows building robust document analytics solutions without having to depend on large sets of annotated training data, which are often not available in industry.</p>
+
+        <h2>How Does the Processing of Documents in Rule-Based Systems Work?</h2>
+
+        <p>Starting from a document, the first necessary step is often to perform OCR (Optical Character Recognition), in other words, to convert a scanned image into machine-readable text. Subsequently, a complex linguistic analysis is carried out, based on different algorithms and a knowledge base, e.g. an ontology. This forms the basis for linguistic rule-writing, which leverages the information produced by the linguistic analysis. By means of these rules, tasks such as entity extraction or document classification can be carried out. Thus, the formerly unstructured data is transformed into structured data, which can be further processed.</p>
+
+        <h2>What Can or Should Be Automated: Where Do I Start?</h2>
+
+        <p>You either automate the processing of documents occurring in high volumes (e.g. invoices) or you focus on automation of documents whose review or processing takes a lot of manual work (contracts, technical reports etc). Good candidates for automation are usually processes which require manual data entry.</p>
+
+        <h2>How Much Time Can Be Saved Using Document Analytics?</h2>
+
+        <p>This really depends on the use case, i.e. the concerned documents and the type of manual task that is to be automated. Sometimes, the gain may (also) be increased quality, because instead of spending time with looking for information, users can dedicate their time to the analysis and decision-making part of the task.</p>
+
+        <h2>Who Has the Final Decision? Who is Responsible?</h2>
+
+        <p>The word "automation" is often misleading. Many of the automation solutions nowadays are partial automation. Just in very few cases, a full validation and subsequent decision will be taken by the system. The more common scenario in industry is that users benefit from an enriched decision support by the machine — the ultimate decision resides with the human. Another way of looking at this is "how much harm or monetary impact does the decision have?"</p>
+
+        <h2>Are There Any Tools You Recommend?</h2>
+
+        <p>The market around document processing and analysis is very dynamic. Recommended tools:</p>
+
+        <ul>
+          <li>ABBYY Flexicapture for custom form-based extraction</li>
+          <li>Amazon Textract — for OCR and extraction in the cloud</li>
+          <li>Expert System's Cogito for rule-based NLP processing</li>
+          <li>Docparser.com for very simple form-based extraction</li>
+        </ul>
+
+      </article>
+
+      <footer class="blog-post-footer">
+        <p>Working on document intelligence? <a href="mailto:marc@giombetti.com">I'd be glad to compare notes.</a></p>
+        <a href="../index.html#blog" class="btn btn-outline">← Back to Blog</a>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Marc Giombetti</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MySQL's group_concat function lets you concatenate grouped column values into a single string — a practical guide with examples.">
+  <title>MySQL: group_concat — Concatenate Grouped Values of a Row – Marc Giombetti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/blog.css">
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">Marc Giombetti</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#focus">Focus</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="../CV-Marc-Giombetti.pdf" target="_blank" rel="noopener">CV</a></li>
+        <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="blog-post-page">
+    <div class="blog-post-container">
+
+      <a href="index.html" class="blog-back-link">← Back to all articles</a>
+
+      <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1400&h=680&q=80" alt="Database and code" class="blog-post-hero-img" loading="eager">
+
+      <header class="blog-post-header">
+        <div class="blog-post-meta">
+          <span class="blog-date">April 15, 2019</span>
+          <span class="blog-category">Software</span>
+        </div>
+        <h1 class="blog-post-title">MySQL: group_concat Allows You to Easily Concatenate the Grouped Values of a Row</h1>
+        <p class="blog-post-subtitle">A practical look at one of MySQL's most useful aggregation functions — with syntax, examples, and real-world use cases.</p>
+        <div class="blog-post-author">
+          <img src="../assets/images/marc-1.jpg" alt="Marc Giombetti" class="blog-author-photo">
+          <div>
+            <span class="blog-author-name">Marc Giombetti</span>
+            <span class="blog-author-title">AI Specialist</span>
+          </div>
+        </div>
+      </header>
+
+      <article class="blog-post-body">
+
+        <p class="blog-lead">Last week I stumbled over a really useful function in MySQL: <code>group_concat</code> allows you to concatenate the data of one column of multiple entries by grouping them by one field. You can choose the separator to use for the concatenation.</p>
+
+        <h2>Syntax</h2>
+
+        <p>The full syntax is as follows:</p>
+
+        <pre style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:20px 24px;font-size:0.85rem;line-height:1.6;overflow-x:auto;margin-bottom:20px;"><code>GROUP_CONCAT([DISTINCT] expr [,expr ...]
+ [ORDER BY {unsigned_integer | col_name | expr}
+ [ASC | DESC] [,col_name ...]]
+ [SEPARATOR str_val])</code></pre>
+
+        <p>According to the MySQL documentation, the function returns a string result with the concatenated non-NULL values from a group. It returns NULL if there are no non-NULL values. To eliminate duplicate values, use the <code>DISTINCT</code> clause. To sort values in the result, use the <code>ORDER BY</code> clause. To sort in reverse order, add the <code>DESC</code> keyword to the name of the column you are sorting by in the <code>ORDER BY</code> clause.</p>
+
+        <h2>Practical Example</h2>
+
+        <p>To make things clear, let's use a simple example. Say you have the following table representing the currently logged in users on a server:</p>
+
+        <pre style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:20px 24px;font-size:0.85rem;line-height:1.6;overflow-x:auto;margin-bottom:20px;"><code>CREATE TABLE `logged_in` (
+  `server` varchar(255) DEFAULT NULL,
+  `user` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</code></pre>
+
+        <p>There is one row for each user which is logged in on a specific server (e.g. marc is logged in on Server A). If you want the resultset to have a single entry for every server with a concatenated list of all the users logged in on that particular server, you can use <code>group_concat</code> and group the results by the name of the server:</p>
+
+        <pre style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:20px 24px;font-size:0.85rem;line-height:1.6;overflow-x:auto;margin-bottom:20px;"><code>SELECT server,
+group_concat(user SEPARATOR ',') AS logged_in_users
+FROM logged_in
+GROUP BY server;</code></pre>
+
+        <p>This produces a single row per server with all logged-in users concatenated.</p>
+
+        <p>Reference: <a href="http://dev.mysql.com/doc/refman/5.7/en/group-by-functions.html#function_group-concat" target="_blank" rel="noopener" style="color:var(--blue);">MySQL Documentation — group_concat</a></p>
+
+      </article>
+
+      <footer class="blog-post-footer">
+        <p>Questions about data or software engineering? <a href="mailto:marc@giombetti.com">Get in touch.</a></p>
+        <a href="index.html" class="btn btn-outline">← Back to Blog</a>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Marc Giombetti</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
